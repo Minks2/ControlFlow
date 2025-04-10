@@ -1,0 +1,22 @@
+<p>interpolacão</p>
+
+<p>Nome: {{name}}</p>
+<p>idade: {{age}}</p>
+
+<h2>Objeto:</h2>
+<p>Marca: {{car.make}}</p>
+<p>Modelo: {{car.model}}</p>
+
+<h2>Acessando o Array</h2>
+
+<ul>
+  @for (hobbie of hobbies; track $index) {
+    <li>{{hobbie}}</li>
+
+
+  }
+</ul>
+<img src="{{imageUrl}}" alt="Imagem ">
+<img [src]="imageUrl" />
+
+
