@@ -1,0 +1,23 @@
+<h1>Diretiva ng class</h1>
+
+<p [ngClass]="{'errorClass': hasError}">Henrique Mosseri</p>
+
+<h2 [ngClass]="classes"> 3SIS- 2025</h2>
+
+<div [ngClass]="isSpecial? 'special': 'backgroundBlack' ">
+
+</div>
+
+<h2> Diretiva ng style</h2>
+<p [ngStyle]="{'background-color': color, 'font-size': size, 'color': 'red'} ">
+Usando ngStyle</p>
+
+<h2>NG Model</h2>
+<label for="exemplo-ngModel"> ngModel</label>
+<input [(ngModel)]="currentItem.name" id="name1"/>
+<p>campo: {{currentItem.name}}</p>
+<p>
+  UpperCase:
+  <input type="text" [ngModel]="currentItem.name" (ngModelChange)="setUpperCaseName($event)" id="name2">
+  
+</p>
