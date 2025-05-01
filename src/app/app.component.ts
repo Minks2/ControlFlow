@@ -6,10 +6,12 @@ import { PropertiesBindingComponent } from './components/properties-binding/prop
 import { DiretivaComponent } from './components/diretiva/diretiva.component';
 import { Carros } from './interfaces/Carros';
 import { ClienteComponent } from './components/cliente/cliente.component';
+import { HomeComponent } from "./home/home.component";
+import { NavComponent } from './components/nav/nav.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, InterpolacaoComponent, ControlFlowComponent, PropertiesBindingComponent, DiretivaComponent, ClienteComponent],
+  imports: [RouterOutlet, InterpolacaoComponent, ControlFlowComponent, PropertiesBindingComponent, DiretivaComponent, ClienteComponent, HomeComponent, NavComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
