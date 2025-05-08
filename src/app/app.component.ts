@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { InterpolacaoComponent } from './compenents/interpolacao/interpolacao.component';
+import { InterpolacaoComponent } from './components/interpolacao/interpolacao.component';
 import { ControlFlowComponent } from './components/control-flow/control-flow.component';
 import { PropertiesBindingComponent } from './components/properties-binding/properties-binding.component';
 import { DiretivaComponent } from './components/diretiva/diretiva.component';

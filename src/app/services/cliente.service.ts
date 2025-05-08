@@ -1,21 +1,30 @@
 import { Injectable } from '@angular/core';
-import {Cliente} from '../interfaces/Cliente'
+import { Cliente } from '../interfaces/Cliente'
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
-  //criando uma lista fake, emulando o que receberiamos de uma API
-  clientes:Cliente[]=[
-    {id:"sksksk", nome: "Thiago", telefone:"1231233"},
-    {id:"skskada", nome: "Henrique", telefone:"312432545"},
-    {id:"sksasdeaw", nome: "Patrick",}
-  ]
+  private apiUrl = 'http://localhost:3000/clientes'; //URL da API
 
-  constructor() {}
+  //criando uma lista fake, emulando o que receberiamos de uma API
+  clientes:Cliente[]=[]
+
+  //injeção de dependência do http
+  constructor(private http:HttpClient) {
+
+  }
+
+  list() : Observable <Cliente[]>{
+    return this.http.get<Cliente[]>(this.apiUrl) as Observable<Cliente[]>
+  }
+
 //retornar a lista de clientes
-    list():Cliente[]{
-      return this.clientes;
-    }
+    // list():Cliente[]{
+    //   return this.clientes;
+    // }
 
     //método para remover cliente
     remove(id:string){

@@ -1,0 +1,22 @@
+{
+  "clientes": [
+    {
+      "id": "dfafs",
+      "nome": "Thiago Xavier",
+      "telefone": "123456789"
+    },
+    {
+      "id": "ddsaf",
+      "nome": "Deborah Aarão",
+      "telefone": "3245678"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "569a",
+      "nome": "Categoria Exemplo",
+      "descricao": "Descrição da categoria",
+      "ativo": true
+    }
+  ]
+}

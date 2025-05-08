@@ -1,0 +1,17 @@
+<h2>Lista de Categorias</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Ativa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let categoria of categorias">
+      <td>{{ categoria.nome }}</td>
+      <td>{{ categoria.descricao }}</td>
+      <td>{{ categoria.ativo ? 'Sim' : 'Não' }}</td>
+    </tr>
+  </tbody>
+</table>

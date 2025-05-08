@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Cliente } from '../../interfaces/Cliente';
 import { ClienteService } from './../../services/cliente.service';
+
 @Component({
   selector: 'app-cliente',
   standalone: true,
@@ -25,7 +26,7 @@ export class ClienteComponent {
   }
 
   list(): void {
-    this.clientes = this.clienteService.list()
+    this.clienteService.list().subscribe((resposta) => (this.clientes=resposta))
   }
   //metodo executado ao inicializar a página
   ngOnInit(): void {
@@ -72,15 +73,15 @@ export class ClienteComponent {
   }
   editar(id: string): void {
     //Buscando todos clientes e filtrando pelo id enviado como parametro
-    const cliente = this.clienteService.list().find(c => c.id == id)
-    if (cliente) {
-      this.clienteIdEdicao = cliente.id
-      //atribuir os valores ao formulário
-      this.clienteForm.patchValue({
-        nome: cliente.nome,
-        telefone: cliente.telefone
-      })
-    }
+    // const cliente = this.clienteService.list().find(c => c.id == id)
+    // if (cliente) {
+    //   this.clienteIdEdicao = cliente.id
+    //   //atribuir os valores ao formulário
+    //   this.clienteForm.patchValue({
+    //     nome: cliente.nome,
+    //     telefone: cliente.telefone
+    //   })
+    // }
     // console.log(cliente)
 
 
