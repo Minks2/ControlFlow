@@ -61,7 +61,8 @@ export class ClienteComponent {
           telefone: formData.telefone,
         }
         // console.log(clienteAdd)
-        this.clienteService.add(clienteAdd) //chamando a service para inserir
+        this.clientes.push(clienteAdd);
+        this.clienteService.add(clienteAdd)//chamando a service para inserir
         alert('Inserido com sucesso') // Enviando feedback ao usuário
       }
     }
@@ -72,12 +73,12 @@ export class ClienteComponent {
 
   }
   editar(id: string): void {
-    //Buscando todos clientes e filtrando pelo id enviado como parametro
+    // //Buscando todos clientes e filtrando pelo id enviado como parametro
     // const cliente = this.clienteService.list().find(c => c.id == id)
     // if (cliente) {
     //   this.clienteIdEdicao = cliente.id
     //   //atribuir os valores ao formulário
-    //   this.clienteForm.patchValue({
+    //   this.clienteForm.patchValue({          
     //     nome: cliente.nome,
     //     telefone: cliente.telefone
     //   })

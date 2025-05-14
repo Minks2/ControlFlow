@@ -1,3 +1,22 @@
+
+<form [formGroup]="categoriaForm" (ngSubmit)="save()">
+  <label>
+  Nome:
+  <input type="text" formControlName="nome">
+  </label>
+  <label>
+  Descrição:
+  <input type="text" formControlName="descricao">
+  </label>
+  <label>Ativa:
+    <select formControlName="ativa">
+      <option [value]="true">Sim</option>
+      <option [value]="false">Não</option>
+    </select>
+  </label>  
+  <button type="submit">Submit</button>
+  </form>
+
 <h2>Lista de Categorias</h2>
 <table border="1">
   <thead>
@@ -8,10 +27,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let categoria of categorias">
+    @for (categoria of categorias; track $index) {
+    <tr>
       <td>{{ categoria.nome }}</td>
       <td>{{ categoria.descricao }}</td>
-      <td>{{ categoria.ativo ? 'Sim' : 'Não' }}</td>
-    </tr>
+      <td>{{ categoria.ativa ? 'Sim' : 'Não' }}</td>
+      <td>
+        <input type="button" (click)="editar(categoria.id)" value="editar">
+        <input type="button" (click)="remover(categoria.id)" value="remover">
+      </td>
+    </tr> 
+  } 
   </tbody>
 </table>

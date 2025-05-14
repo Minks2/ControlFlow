@@ -37,10 +37,22 @@ export class ClienteService {
       }
     }
 
-    add(cliente:Cliente){
-      this.clientes.push(cliente)
-      console.log(this.clientes)
-    }
+    // add(cliente:Cliente){
+    //   this.clientes.push(cliente)
+    //   console.log(this.clientes)
+    // }
+
+    add(cliente: Cliente) {
+      const httpHeaders =
+      {
+      headers: {
+      'Content-Type': 'application/json'
+      }
+      };
+      return this.http.post(this.apiUrl, cliente, httpHeaders);
+      //this.clientes.push(cliente);
+      //console.log(this.clientes);
+      }
 
     update(id:string, cliente:Cliente){
       const index= this.clientes.findIndex(c=> c.id===id);
